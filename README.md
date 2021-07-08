@@ -7,8 +7,6 @@
 - Fully customizable
 - Easy to use
 
-![demonstration](./assets/chat-demonstration.gif)
-
 ## Installation
 
 #### npm
@@ -29,9 +27,9 @@ yarn add react-chat-widget-2
 
 ```js
 import React from "react";
-import { Widget } from "react-chat-widget-2-2";
+import { Widget } from "react-chat-widget-2";
 
-import "react-chat-widget-2-2/lib/styles.css";
+import "react-chat-widget-2/lib/styles.css";
 
 function App() {
   return (
