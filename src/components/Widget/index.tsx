@@ -1,10 +1,11 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
+import React from "react";
 
-import { toggleChat, addUserMessage } from '../../store/actions';
-import { AnyFunction } from '../../utils/types';
+import { toggleChat, addUserMessage } from "../../store/actions";
+import { isWidgetOpened } from "../../store/dispatcher";
+import { AnyFunction } from "../../utils/types";
 
-import WidgetLayout from './layout';
+import WidgetLayout from "./layout";
 
 type Props = {
   title: string;
@@ -20,14 +21,17 @@ type Props = {
   handleQuickButtonClicked?: AnyFunction;
   handleTextInputChange?: (event: any) => void;
   chatId: string;
+  handleToggle?: AnyFunction;
   launcherOpenLabel: string;
   launcherCloseLabel: string;
+  launcherOpenImg: string;
+  launcherCloseImg: string;
   sendButtonAlt: string;
   showTimeStamp: boolean;
   imagePreview?: boolean;
   zoomStep?: number;
   handleSubmit?: AnyFunction;
-}
+};
 
 function Widget({
   title,
@@ -43,39 +47,38 @@ function Widget({
   handleQuickButtonClicked,
   handleTextInputChange,
   chatId,
+  handleToggle,
   launcherOpenLabel,
   launcherCloseLabel,
+  launcherCloseImg,
+  launcherOpenImg,
   sendButtonAlt,
   showTimeStamp,
   imagePreview,
   zoomStep,
-  handleSubmit
+  handleSubmit,
 }: Props) {
   const dispatch = useDispatch();
 
   const toggleConversation = () => {
     dispatch(toggleChat());
-  }
+    handleToggle ? handleToggle(isWidgetOpened()) : null;
+  };
 
-  const handleMessageSubmit = (event) => {
-    event.preventDefault();
-    const userInput = event.target.message.value;
-    
-    if (!userInput.trim()) {      
-      return;      
+  const handleMessageSubmit = (userInput) => {
+    if (!userInput.trim()) {
+      return;
     }
 
-    if(typeof handleSubmit === 'function' && handleSubmit(userInput)) {
-      dispatch(addUserMessage(userInput));
-      handleNewUserMessage(userInput);
-      event.target.message.value = '';
-    }    
-  }
+    handleSubmit?.(userInput);
+    dispatch(addUserMessage(userInput));
+    handleNewUserMessage(userInput);
+  };
 
   const onQuickButtonClicked = (event, value) => {
     event.preventDefault();
-    handleQuickButtonClicked?.(value)
-  }
+    handleQuickButtonClicked?.(value);
+  };
 
   return (
     <WidgetLayout
@@ -95,6 +98,8 @@ function Widget({
       chatId={chatId}
       launcherOpenLabel={launcherOpenLabel}
       launcherCloseLabel={launcherCloseLabel}
+      launcherCloseImg={launcherCloseImg}
+      launcherOpenImg={launcherOpenImg}
       sendButtonAlt={sendButtonAlt}
       showTimeStamp={showTimeStamp}
       imagePreview={imagePreview}

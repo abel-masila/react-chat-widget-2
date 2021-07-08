@@ -7,7 +7,10 @@ function Footer() {
       <div className="chat-footer">
         <div className="power">
           Chat By
-          <span className="brand"> x2ai.com</span>
+          <a href="https://www.x2ai.com" target="_blank" className="brand">
+            {" "}
+            x2ai.com
+          </a>
         </div>
         <span className="spacer">|</span>
         <a
