@@ -1,9 +1,12 @@
+@import "variables/colors";
+
 .chat-bottom {
   bottom: 0;
   border-radius: 0 0 5px 5px;
-  width: calc(100% - 32px);
+  width: 100%;
   padding: 0 16px 13px;
   line-height: 1;
+  background-color: $white;
 }
 .chat-footer {
   padding-top: 10px;
