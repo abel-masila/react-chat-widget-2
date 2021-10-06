@@ -3,7 +3,6 @@
 .rcw-sender {
   align-items: flex-end;
   background-color: $grey-2;
-  border-radius: 0 0 10px 10px;
   display: flex;
   height: max-content;
   max-height: 95px;
@@ -17,7 +16,6 @@
 }
 
 .rcw-new-message {
-  background-color: $white;
   border: 0;
   border-radius: 5px;
   padding: 10px 5px;
@@ -45,7 +43,7 @@
 
   &[placeholder]:empty::before {
     content: attr(placeholder);
-    color: $grey-0; 
+    color: $grey-0;
   }
 }
 
@@ -63,7 +61,7 @@
   cursor: not-allowed;
 }
 
-@media screen and (max-width: 800px)  {
+@media screen and (max-width: 800px) {
   .rcw-sender {
     border-radius: 0;
     flex-shrink: 0;
