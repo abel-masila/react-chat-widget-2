@@ -2,7 +2,9 @@
 
 .rcw-sender {
   align-items: flex-end;
-  background-color: $grey-2;
+  background-color: $white;
+  border-top: 2px solid #f2f5f8;
+  border-bottom: 2px solid #f2f5f8;
   display: flex;
   height: max-content;
   max-height: 95px;
