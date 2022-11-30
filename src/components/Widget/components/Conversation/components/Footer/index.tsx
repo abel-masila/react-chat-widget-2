@@ -7,17 +7,13 @@ function Footer() {
       <div className="chat-footer">
         <div className="power">
           Chat By
-          <a href="https://www.x2ai.com" target="_blank" className="brand">
+          <a href="https://www.cass.ai" target="_blank" className="brand">
             {" "}
-            x2ai.com
+            cass.ai
           </a>
         </div>
         <span className="spacer">|</span>
-        <a
-          href="https://www.x2ai.com/privacy"
-          target="_blank"
-          className="privacy"
-        >
+        <a href="https://www.cass.ai/terms" target="_blank" className="privacy">
           Privacy Policy
         </a>
       </div>
