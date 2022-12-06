@@ -45,6 +45,7 @@ function Messages({ profileAvatar, showTimeStamp }: Props) {
   useEffect(() => {
     // @ts-ignore
     scrollToBottom(messageRef.current);
+    messageRef?.current?.scrollIntoView({ behavior: "smooth" });
     if (showChat && badgeCount) dispatch(markAllMessagesRead());
     else
       dispatch(
