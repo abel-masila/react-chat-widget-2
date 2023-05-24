@@ -27,6 +27,7 @@ type Props = {
   onTextInputChange?: (event: any) => void;
   sendButtonAlt: string;
   showTimeStamp: boolean;
+  showFooter?: boolean;
 };
 
 function Conversation({
@@ -45,6 +46,7 @@ function Conversation({
   onTextInputChange,
   sendButtonAlt,
   showTimeStamp,
+  showFooter=true
 }: Props) {
   return (
     <div
@@ -68,7 +70,7 @@ function Conversation({
         onTextInputChange={onTextInputChange}
         buttonAlt={sendButtonAlt}
       />
-      <Footer />
+      {showFooter ? <Footer /> : null}
     </div>
   );
 }

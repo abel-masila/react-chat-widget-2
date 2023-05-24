@@ -31,6 +31,7 @@ type Props = {
   imagePreview?: boolean;
   zoomStep?: number;
   handleSubmit?: AnyFunction;
+  showFooter?:boolean
 };
 
 function Widget({
@@ -57,6 +58,7 @@ function Widget({
   imagePreview,
   zoomStep,
   handleSubmit,
+  showFooter
 }: Props) {
   const dispatch = useDispatch();
 
@@ -104,6 +106,7 @@ function Widget({
       showTimeStamp={showTimeStamp}
       imagePreview={imagePreview}
       zoomStep={zoomStep}
+      showFooter={showFooter}
     />
   );
 }
