@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import { useSelector } from "react-redux";
 import cn from "classnames";
 
@@ -29,8 +29,8 @@ function Sender({
   const inputRef = useRef<HTMLSpanElement>(null);
   // @ts-ignore
   useEffect(() => {
-    if (showChat && autofocus) inputRef.current?.focus();
-  }, [showChat]);
+    if (showChat && autofocus && !disabledInput) inputRef.current?.focus();
+  }, [showChat, disabledInput]);
 
   const handlerOnChange = (event) => {
     onTextInputChange && onTextInputChange(event);

@@ -36,7 +36,9 @@ function Launcher({
 
   const toggleChat = () => {
     toggle();
-    if (!showChat) dispatch(setBadgeCount(0));
+    if (!showChat) {
+      dispatch(setBadgeCount(0));
+    }
   };
 
   return (

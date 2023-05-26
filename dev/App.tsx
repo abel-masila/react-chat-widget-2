@@ -6,6 +6,7 @@ import {
   setQuickButtons,
   toggleMsgLoader,
   addLinkSnippet,
+  toggleInputDisabled,
 } from "../index";
 import { addUserMessage } from "..";
 
@@ -23,8 +24,10 @@ export default class App extends Component {
 
   handleNewUserMessage = (newMessage: any) => {
     toggleMsgLoader();
+    toggleInputDisabled();
     setTimeout(() => {
       toggleMsgLoader();
+      toggleInputDisabled();
       if (newMessage === "fruits") {
         setQuickButtons([
           { label: "Apple", value: "apple" },
@@ -64,6 +67,7 @@ export default class App extends Component {
           handleNewUserMessage={this.handleNewUserMessage}
           handleQuickButtonClicked={this.handleQuickButtonClicked}
           imagePreview
+          autofocus
           handleSubmit={this.handleSubmit}
           showFooter={true}
         />

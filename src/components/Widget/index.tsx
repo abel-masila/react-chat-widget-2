@@ -64,6 +64,11 @@ function Widget({
 
   const toggleConversation = () => {
     dispatch(toggleChat());
+    if(!isWidgetOpened()){
+          window.parent.postMessage("close", "*");
+    }else{
+        window.parent.postMessage("open", "*");
+    }
     handleToggle ? handleToggle(isWidgetOpened()) : null;
   };
 
