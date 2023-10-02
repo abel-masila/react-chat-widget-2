@@ -32,6 +32,7 @@ type Props = {
   zoomStep?: number;
   handleSubmit?: AnyFunction;
   showFooter?: boolean;
+  isLoading?: boolean;
 } & typeof defaultProps;
 
 function ConnectedWidget({
@@ -59,6 +60,7 @@ function ConnectedWidget({
   zoomStep,
   handleSubmit,
   showFooter,
+  isLoading,
 }: Props) {
   return (
     <Provider store={store}>
@@ -87,6 +89,7 @@ function ConnectedWidget({
         zoomStep={zoomStep}
         handleSubmit={handleSubmit}
         showFooter={showFooter}
+        isLoading={isLoading}
       />
     </Provider>
   );

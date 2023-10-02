@@ -15,6 +15,7 @@ type Props = {
   sendMessage: (event: any) => void;
   buttonAlt: string;
   onTextInputChange?: (event: any) => void;
+  isLoading?: boolean;
 };
 
 function Sender({
@@ -24,6 +25,7 @@ function Sender({
   autofocus,
   onTextInputChange,
   buttonAlt,
+  isLoading,
 }: Props) {
   const showChat = useSelector((state: GlobalState) => state.behavior.showChat);
   const inputRef = useRef<HTMLSpanElement>(null);
@@ -38,14 +40,15 @@ function Sender({
 
   const handlerSendMessage = () => {
     const { current } = inputRef;
-    if (current?.innerHTML) {
+
+    if (current?.innerHTML && !isLoading) {
       sendMessage(current.innerText);
       current.innerHTML = "";
     }
   };
 
   const handlerOnKeyPress = (event) => {
-    if (event.charCode == 13 && !event.shiftKey) {
+    if (event.charCode === 13 && !event.shiftKey) {
       event.preventDefault();
       handlerSendMessage();
     }
@@ -53,16 +56,12 @@ function Sender({
 
   return (
     <div className="rcw-sender">
-      <div
-        className={cn("rcw-new-message", {
-          "rcw-message-disable": disabledInput,
-        })}
-      >
+      <div className="rcw-new-message">
         <span
           spellCheck
           className="rcw-input"
           role="textbox"
-          contentEditable={!disabledInput}
+          contentEditable
           ref={inputRef}
           placeholder={placeholder}
           onInput={handlerOnChange}

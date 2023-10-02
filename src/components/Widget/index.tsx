@@ -31,7 +31,8 @@ type Props = {
   imagePreview?: boolean;
   zoomStep?: number;
   handleSubmit?: AnyFunction;
-  showFooter?:boolean
+  showFooter?: boolean;
+  isLoading?: boolean;
 };
 
 function Widget({
@@ -58,16 +59,17 @@ function Widget({
   imagePreview,
   zoomStep,
   handleSubmit,
-  showFooter
+  showFooter,
+  isLoading,
 }: Props) {
   const dispatch = useDispatch();
 
   const toggleConversation = () => {
     dispatch(toggleChat());
-    if(!isWidgetOpened()){
-          window.parent.postMessage("close", "*");
-    }else{
-        window.parent.postMessage("open", "*");
+    if (!isWidgetOpened()) {
+      window.parent.postMessage("close", "*");
+    } else {
+      window.parent.postMessage("open", "*");
     }
     handleToggle ? handleToggle(isWidgetOpened()) : null;
   };
@@ -112,6 +114,7 @@ function Widget({
       imagePreview={imagePreview}
       zoomStep={zoomStep}
       showFooter={showFooter}
+      isLoading={isLoading}
     />
   );
 }

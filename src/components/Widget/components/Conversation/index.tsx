@@ -28,6 +28,7 @@ type Props = {
   sendButtonAlt: string;
   showTimeStamp: boolean;
   showFooter?: boolean;
+  isLoading?: boolean;
 };
 
 function Conversation({
@@ -46,7 +47,8 @@ function Conversation({
   onTextInputChange,
   sendButtonAlt,
   showTimeStamp,
-  showFooter=true
+  showFooter = true,
+  isLoading = false,
 }: Props) {
   return (
     <div
@@ -69,6 +71,7 @@ function Conversation({
         autofocus={autofocus}
         onTextInputChange={onTextInputChange}
         buttonAlt={sendButtonAlt}
+        isLoading={isLoading}
       />
       {showFooter ? <Footer /> : null}
     </div>

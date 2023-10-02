@@ -70,6 +70,8 @@ export default class App extends Component {
           autofocus
           handleSubmit={this.handleSubmit}
           showFooter={true}
+          disabledInput={true}
+          isLoading={false}
         />
       </div>
     );
