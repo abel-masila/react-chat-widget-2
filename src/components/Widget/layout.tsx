@@ -38,6 +38,7 @@ type Props = {
   zoomStep?: number;
   showFooter?: boolean;
   isLoading?: boolean;
+  primaryColor?: string;
 };
 
 function WidgetLayout({
@@ -65,6 +66,7 @@ function WidgetLayout({
   zoomStep,
   showFooter,
   isLoading,
+  primaryColor,
 }: Props) {
   const dispatch = useDispatch();
   const { dissableInput, showChat, visible } = useSelector(
@@ -154,6 +156,7 @@ function WidgetLayout({
           showTimeStamp={showTimeStamp}
           showFooter={showFooter}
           isLoading={isLoading}
+          primaryColor={primaryColor}
         />
       )}
       {customLauncher

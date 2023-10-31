@@ -71,7 +71,7 @@ export default class App extends Component {
           handleSubmit={this.handleSubmit}
           showFooter={true}
           disabledInput={true}
-          isLoading={false}
+          isLoading={true}
         />
       </div>
     );

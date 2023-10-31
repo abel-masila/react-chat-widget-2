@@ -16,6 +16,7 @@ type Props = {
   buttonAlt: string;
   onTextInputChange?: (event: any) => void;
   isLoading?: boolean;
+  primaryColor?: string;
 };
 
 function Sender({
@@ -26,6 +27,7 @@ function Sender({
   onTextInputChange,
   buttonAlt,
   isLoading,
+  primaryColor,
 }: Props) {
   const showChat = useSelector((state: GlobalState) => state.behavior.showChat);
   const inputRef = useRef<HTMLSpanElement>(null);
@@ -68,8 +70,22 @@ function Sender({
           onKeyPress={handlerOnKeyPress}
         />
       </div>
-      <button type="submit" className="rcw-send" onClick={handlerSendMessage}>
-        <img src={send} className="rcw-send-icon" alt={buttonAlt} />
+      <button
+        type="submit"
+        className="rcw-tooltip-button rcw-send"
+        //className={cn("rcw-send", { "rcw-tooltip": isLoading })}
+        title={isLoading ? "Let's wait for the assistant's response." : ""}
+        onClick={handlerSendMessage}
+        style={{
+          backgroundColor: isLoading ? "gray" : primaryColor,
+        }}
+      >
+        <img
+          src={send}
+          className="rcw-send-icon"
+          alt={buttonAlt}
+          title={isLoading ? "Let's wait for the assistant's response." : ""}
+        />
       </button>
     </div>
   );

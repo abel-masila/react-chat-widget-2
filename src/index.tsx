@@ -33,6 +33,7 @@ type Props = {
   handleSubmit?: AnyFunction;
   showFooter?: boolean;
   isLoading?: boolean;
+  primaryColor?: string;
 } & typeof defaultProps;
 
 function ConnectedWidget({
@@ -61,6 +62,7 @@ function ConnectedWidget({
   handleSubmit,
   showFooter,
   isLoading,
+  primaryColor,
 }: Props) {
   return (
     <Provider store={store}>
@@ -90,6 +92,7 @@ function ConnectedWidget({
         handleSubmit={handleSubmit}
         showFooter={showFooter}
         isLoading={isLoading}
+        primaryColor={primaryColor}
       />
     </Provider>
   );

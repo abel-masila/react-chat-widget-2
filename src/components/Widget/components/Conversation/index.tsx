@@ -29,6 +29,7 @@ type Props = {
   showTimeStamp: boolean;
   showFooter?: boolean;
   isLoading?: boolean;
+  primaryColor?: string;
 };
 
 function Conversation({
@@ -49,6 +50,7 @@ function Conversation({
   showTimeStamp,
   showFooter = true,
   isLoading = false,
+  primaryColor,
 }: Props) {
   return (
     <div
@@ -72,6 +74,7 @@ function Conversation({
         onTextInputChange={onTextInputChange}
         buttonAlt={sendButtonAlt}
         isLoading={isLoading}
+        primaryColor={primaryColor}
       />
       {showFooter ? <Footer /> : null}
     </div>

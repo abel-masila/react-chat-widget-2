@@ -33,6 +33,7 @@ type Props = {
   handleSubmit?: AnyFunction;
   showFooter?: boolean;
   isLoading?: boolean;
+  primaryColor?: string;
 };
 
 function Widget({
@@ -61,6 +62,7 @@ function Widget({
   handleSubmit,
   showFooter,
   isLoading,
+  primaryColor,
 }: Props) {
   const dispatch = useDispatch();
 
@@ -115,6 +117,7 @@ function Widget({
       zoomStep={zoomStep}
       showFooter={showFooter}
       isLoading={isLoading}
+      primaryColor={primaryColor}
     />
   );
 }
