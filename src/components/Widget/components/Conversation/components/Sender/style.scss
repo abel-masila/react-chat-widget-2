@@ -11,6 +11,7 @@
   overflow: hidden;
   padding: 10px;
 
+  align-items: center;
   &.expand {
     height: 55px;
   }
@@ -56,6 +57,10 @@
   background: $white;
   border: 0;
   margin: 7px 0 12px 7px;
+
+  display: flex;
+  height: 20px;
+  align-items: center;
 
   .rcw-send-icon {
     height: 14px;
