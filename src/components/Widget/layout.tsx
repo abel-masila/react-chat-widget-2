@@ -39,6 +39,7 @@ type Props = {
   showFooter?: boolean;
   isLoading?: boolean;
   primaryColor?: string;
+  stickyButtons?: React.ReactNode;
 };
 
 function WidgetLayout({
@@ -67,6 +68,7 @@ function WidgetLayout({
   showFooter,
   isLoading,
   primaryColor,
+  stickyButtons,
 }: Props) {
   const dispatch = useDispatch();
   const { dissableInput, showChat, visible } = useSelector(
@@ -157,6 +159,7 @@ function WidgetLayout({
           showFooter={showFooter}
           isLoading={isLoading}
           primaryColor={primaryColor}
+          stickyButtons={stickyButtons}
         />
       )}
       {customLauncher

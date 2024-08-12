@@ -34,6 +34,7 @@ type Props = {
   showFooter?: boolean;
   isLoading?: boolean;
   primaryColor?: string;
+  stickyButtons?: React.ReactNode;
 } & typeof defaultProps;
 
 function ConnectedWidget({
@@ -63,6 +64,7 @@ function ConnectedWidget({
   showFooter,
   isLoading,
   primaryColor,
+  stickyButtons,
 }: Props) {
   return (
     <Provider store={store}>
@@ -93,6 +95,7 @@ function ConnectedWidget({
         showFooter={showFooter}
         isLoading={isLoading}
         primaryColor={primaryColor}
+        stickyButtons={stickyButtons}
       />
     </Provider>
   );

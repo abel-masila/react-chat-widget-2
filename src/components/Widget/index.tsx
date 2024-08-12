@@ -34,6 +34,7 @@ type Props = {
   showFooter?: boolean;
   isLoading?: boolean;
   primaryColor?: string;
+  stickyButtons?: React.ReactNode;
 };
 
 function Widget({
@@ -63,6 +64,7 @@ function Widget({
   showFooter,
   isLoading,
   primaryColor,
+  stickyButtons,
 }: Props) {
   const dispatch = useDispatch();
 
@@ -118,6 +120,7 @@ function Widget({
       showFooter={showFooter}
       isLoading={isLoading}
       primaryColor={primaryColor}
+      stickyButtons={stickyButtons}
     />
   );
 }

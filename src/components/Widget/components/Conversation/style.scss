@@ -1,6 +1,6 @@
-@import 'common';
-@import 'variables/colors';
-@import 'animation';
+@import "common";
+@import "variables/colors";
+@import "animation";
 
 .rcw-conversation-container {
   border-radius: 10px !important;
@@ -19,6 +19,10 @@
     transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
+}
+.rcw-chat-button {
+  display: flex;
+  align-items: center;
 }
 
 .rcw-full-screen {

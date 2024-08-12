@@ -30,6 +30,7 @@ type Props = {
   showFooter?: boolean;
   isLoading?: boolean;
   primaryColor?: string;
+  stickyButtons?: React.ReactNode;
 };
 
 function Conversation({
@@ -51,6 +52,7 @@ function Conversation({
   showFooter = true,
   isLoading = false,
   primaryColor,
+  stickyButtons,
 }: Props) {
   return (
     <div
@@ -76,6 +78,7 @@ function Conversation({
         isLoading={isLoading}
         primaryColor={primaryColor}
       />
+      <div className="rcw-chat-buttons">{stickyButtons}</div>
       {showFooter ? <Footer /> : null}
     </div>
   );
