@@ -35,6 +35,7 @@ type Props = {
   isLoading?: boolean;
   primaryColor?: string;
   stickyButtons?: React.ReactNode;
+  disabledControls?: boolean;
 };
 
 function Widget({
@@ -65,6 +66,7 @@ function Widget({
   isLoading,
   primaryColor,
   stickyButtons,
+  disabledControls
 }: Props) {
   const dispatch = useDispatch();
 
@@ -121,6 +123,7 @@ function Widget({
       isLoading={isLoading}
       primaryColor={primaryColor}
       stickyButtons={stickyButtons}
+      disabledControls={disabledControls}
     />
   );
 }

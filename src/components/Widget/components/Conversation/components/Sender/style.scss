@@ -52,7 +52,12 @@
     color: $grey-0;
   }
 }
-
+.rcw-input-disabled {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
 .rcw-send {
   background: $white;
   border: 0;

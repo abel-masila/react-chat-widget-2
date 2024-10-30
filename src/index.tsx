@@ -35,6 +35,8 @@ type Props = {
   isLoading?: boolean;
   primaryColor?: string;
   stickyButtons?: React.ReactNode;
+  disabledControls?: boolean;
+
 } & typeof defaultProps;
 
 function ConnectedWidget({
@@ -65,6 +67,7 @@ function ConnectedWidget({
   isLoading,
   primaryColor,
   stickyButtons,
+  disabledControls
 }: Props) {
   return (
     <Provider store={store}>
@@ -96,6 +99,7 @@ function ConnectedWidget({
         isLoading={isLoading}
         primaryColor={primaryColor}
         stickyButtons={stickyButtons}
+        disabledControls={disabledControls}
       />
     </Provider>
   );

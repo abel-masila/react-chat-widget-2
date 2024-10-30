@@ -31,6 +31,7 @@ type Props = {
   isLoading?: boolean;
   primaryColor?: string;
   stickyButtons?: React.ReactNode;
+  disabledControls?: boolean;
 };
 
 function Conversation({
@@ -53,6 +54,7 @@ function Conversation({
   isLoading = false,
   primaryColor,
   stickyButtons,
+  disabledControls
 }: Props) {
   return (
     <div
@@ -77,6 +79,7 @@ function Conversation({
         buttonAlt={sendButtonAlt}
         isLoading={isLoading}
         primaryColor={primaryColor}
+        disabledControls={disabledControls}
       />
       <div className="rcw-chat-buttons">{stickyButtons}</div>
       {showFooter ? <Footer /> : null}
